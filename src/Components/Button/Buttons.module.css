@@ -1,0 +1,15 @@
+.buttons{
+display:flex;
+border: solid 3px #4cb5b5;
+width:180px;
+height:40px;
+border-radius:10px;
+ align-items:  center;
+ justify-content: space-around;
+}
+.button{
+background-color: #4cb5b5;
+border: solid 3px #4cb5b5;
+border-radius:5px;
+
+}

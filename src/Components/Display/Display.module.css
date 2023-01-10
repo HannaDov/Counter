@@ -1,0 +1,17 @@
+.display{
+border: solid 3px #4cb5b5;
+width:180px;
+height:100px;
+border-radius:10px;
+background-color:#4cb5b5;
+font-size:30px;
+}
+.disabled{
+color:red;
+}
+.error{
+color:red;
+}
+.title{
+color:#3d4545;
+}
