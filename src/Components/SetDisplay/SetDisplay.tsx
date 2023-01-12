@@ -6,14 +6,18 @@ type DisplayPropsType = {
     maxNum: number
     setMaxNum: (maxNum: number) => void
     setMinNum: (minNum: number) => void
+    setEnterValue:(enterValue:boolean)=>void
+    enterValue:boolean
 }
 
 export const SetDisplay = (props: DisplayPropsType) => {
     const MaxOnChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         props.setMaxNum(+e.currentTarget.value)
+        props.setEnterValue(true)
     }
     const MinOnChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         props.setMinNum(+e.currentTarget.value)
+        props.setEnterValue(true)
     }
     const displayStyleForMaxValue = `${props.minNum === props.maxNum || props.maxNum < 0 || props.maxNum < props.minNum ? s.errorInput : s.input}`
     const displayStyleForMinValue = `${props.minNum === props.maxNum || props.minNum < 0 || props.maxNum < props.minNum ? s.errorInput : s.input}`

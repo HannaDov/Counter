@@ -10,19 +10,21 @@ function App() {
     //input state
     const [minNum, setMinNum] = useState<number>(0)
     const [maxNum, setMaxNum] = useState<number>(5)
-    const [showValue, setShowValue]=useState<boolean>(false)
+    const [enterValue, setEnterValue]=useState<boolean>(false)
 
 
     return (
         <div className="App">
             <Counter num={num} setNum={setNum} minNum={minNum} maxNum={maxNum}
 
-                     setMaxNum={setMaxNum} setMinNum={setMinNum} showValue={showValue}
-                     setShowValue={setShowValue}
+                     setMaxNum={setMaxNum} setMinNum={setMinNum} enterValue={enterValue}
+                     setEnterValue={setEnterValue}
             />
             <SetCounter num={num} setNum={setNum} minNum={minNum} maxNum={maxNum}
 
-                        setMaxNum={setMaxNum} setMinNum={setMinNum} startNum={startNum}/>
+                        setMaxNum={setMaxNum} setMinNum={setMinNum} startNum={startNum} enterValue={enterValue}
+                        setEnterValue={setEnterValue}
+            />
 
         </div>
     );

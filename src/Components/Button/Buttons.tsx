@@ -6,9 +6,10 @@ type ButtonsPropsType = {
     setNum: (num: number) => void
     minNum: number
     maxNum: number
-    showValue: boolean
     setMaxNum: (maxNum: number) => void
     setMinNum: (minNum: number) => void
+    setEnterValue: (enterValue: boolean) => void
+    enterValue: boolean
 }
 export const Buttons = (props: ButtonsPropsType) => {
 
@@ -21,8 +22,8 @@ export const Buttons = (props: ButtonsPropsType) => {
     }
     return (
         <div className={s.buttons}>
-            <button onClick={incHandler} disabled={props.num === props.maxNum || props.showValue} className={s.button}>inc</button>
-            <button onClick={resetHandler} className={s.button}> reset</button>
+            <button onClick={incHandler} disabled={props.num === props.maxNum||props.minNum === props.maxNum || props.minNum < 0 || props.maxNum < 0 || props.maxNum < props.minNum||props.enterValue} className={s.button}>inc</button>
+            <button onClick={resetHandler} disabled={props.minNum === props.maxNum || props.minNum < 0 || props.maxNum < 0 || props.maxNum < props.minNum||props.enterValue} className={s.button}> reset</button>
 
         </div>
     );

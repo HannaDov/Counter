@@ -7,7 +7,8 @@ type ButtonsPropsType = {
     setMaxNum: (maxNum: number) => void
     setMinNum: (minNum: number) => void
     setNum: (num: number) => void
-
+    setEnterValue:(enterValue:boolean)=>void
+    enterValue:boolean
 }
 export const SetButtons = (props: ButtonsPropsType) => {
     const SetOnClickHandler = () => {
@@ -15,13 +16,14 @@ export const SetButtons = (props: ButtonsPropsType) => {
         localStorage.setItem('valueMinNum', JSON.stringify(props.minNum))
         props.setMinNum(props.minNum)
         props.setNum(props.minNum)
+        props.setEnterValue(false)
 
     }
 
     return (
         <div className={s.buttons}>
             <button className={s.button}
-                    disabled={props.minNum === props.maxNum || props.minNum < 0 || props.maxNum < 0 || props.maxNum < props.minNum}
+                    disabled={props.minNum === props.maxNum || props.minNum < 0 || props.maxNum < 0 || props.maxNum < props.minNum||!props.enterValue}
                     onClick={SetOnClickHandler}>set
             </button>
 

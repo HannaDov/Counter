@@ -10,10 +10,10 @@ type  CounterPropsType = {
     setNum: (num: number) => void
     minNum: number
     maxNum: number
-    showValue:boolean
     setMaxNum: (maxNum: number) => void
     setMinNum: (minNum: number) => void
-    setShowValue:(showValue:boolean)=>void
+    setEnterValue: (enterValue: boolean) => void
+    enterValue: boolean
 }
 export const Counter = (props: CounterPropsType) => {
     return (
@@ -21,10 +21,13 @@ export const Counter = (props: CounterPropsType) => {
             <Display num={props.num} setNum={props.setNum} minNum={props.minNum} maxNum={props.maxNum}
 
                      setMaxNum={props.setMaxNum} setMinNum={props.setMinNum}
-                     setShowValue={props.setShowValue} showValue={props.showValue}/>
+                     enterValue={props.enterValue}
+                     setEnterValue={props.setEnterValue}/>
             <Buttons num={props.num} setNum={props.setNum} minNum={props.minNum} maxNum={props.maxNum}
 
-                     setMaxNum={props.setMaxNum} setMinNum={props.setMinNum} showValue={props.showValue}/>
+                     setMaxNum={props.setMaxNum} setMinNum={props.setMinNum}
+                     enterValue={props.enterValue}
+                     setEnterValue={props.setEnterValue}/>
         </div>
     );
 }

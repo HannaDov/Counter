@@ -13,17 +13,24 @@ type  SetCounterPropsType = {
     startNum: number
     setMaxNum: (maxNum: number) => void
     setMinNum: (minNum: number) => void
-
+    setEnterValue:(enterValue:boolean)=>void
+    enterValue:boolean
 
 }
 export const SetCounter = (props: SetCounterPropsType) => {
     return (
         <div className={s.counter}>
             <SetDisplay minNum={props.minNum} maxNum={props.maxNum} setMaxNum={props.setMaxNum}
-                        setMinNum={props.setMinNum}/>
+                        setMinNum={props.setMinNum} enterValue={props.enterValue}
+                        setEnterValue={props.setEnterValue}
+            />
             <SetButtons minNum={props.minNum}
                         maxNum={props.maxNum} setNum={props.setNum}
-                        setMaxNum={props.setMaxNum} setMinNum={props.setMinNum}/>
+                        setMaxNum={props.setMaxNum}
+                        setMinNum={props.setMinNum}
+                        enterValue={props.enterValue}
+                        setEnterValue={props.setEnterValue}
+            />
         </div>
     );
 }

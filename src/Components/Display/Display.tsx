@@ -2,14 +2,15 @@ import React from 'react';
 import s from "./Display.module.css"
 
 type DisplayPropsType = {
-    num: number
+    num?: number
     setNum: (num: number) => void
     minNum: number
     maxNum: number
-    showValue:boolean
-     setMaxNum: (maxNum: number) => void
+    setMaxNum: (maxNum: number) => void
     setMinNum: (minNum: number) => void
-    setShowValue:(showValue:boolean)=>void
+    setEnterValue: (enterValue: boolean) => void
+    enterValue: boolean
+
 }
 
 export const Display = (props: DisplayPropsType) => {
@@ -18,15 +19,16 @@ export const Display = (props: DisplayPropsType) => {
 
     }
 
-    /*else if(props.minNum !== props.maxNum || props.minNum >= 0 || props.maxNum > 0 || props.maxNum > props.minNum){
-        return <div className={s.display+' '+s.title}>Enter values!</div>
-    }*/
-    return (
+      else if(props.enterValue){
+          return <div className={s.display+' '+s.title}>Enter value and press 'set'!</div>
+      } else{return (
         <div className={s.display}>
-            <div className={props.num === 5 || props.num === props.maxNum ? s.disabled : ''}> {props.num
-            }</div>
+            <div className={props.num === props.maxNum ? s.disabled : ''}> {props.num
+            }
+            </div>
 
         </div>
-    );
+    )}
+
 };
 
